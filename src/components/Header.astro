@@ -6,6 +6,7 @@ interface Props {
   currentPath: string;
 }
 const { currentPath } = Astro.props;
+const primaryLinks = navLinks.filter((link) => link.href !== '/contacto');
 ---
 <header
   class="nav"
@@ -15,16 +16,37 @@ const { currentPath } = Astro.props;
     <span style="font-family: var(--font-mono); color: var(--color-accent)">ZA</span>
     <span>Desarrollo Software</span>
   </a>
-  <button
-    id="menu-toggle"
-    type="button"
-    aria-label="Abrir menú"
-    aria-expanded="false"
-    aria-controls="mobile-menu"
-    class="btn btn-secondary btn-icon"
-  >
-    <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><rect x="32" y="72" width="192" height="16" rx="4"></rect><rect x="32" y="168" width="192" height="16" rx="4"></rect></svg>
-  </button>
+  <nav class="desktop-nav" style="align-items: center; gap: 28px; margin-left: 40px">
+    {primaryLinks.map((link) => (
+      <a
+        href={link.href}
+        aria-current={currentPath === link.href ? 'page' : undefined}
+        style={`font-size: 14px; text-decoration: none; color: ${currentPath === link.href ? 'var(--color-accent)' : 'var(--color-text)'}`}
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+  <div style="margin-left: auto; display: flex; align-items: center; gap: 12px">
+    <a
+      href="/contacto"
+      class="desktop-contact-btn btn btn-secondary"
+      aria-current={currentPath === '/contacto' ? 'page' : undefined}
+      style={currentPath === '/contacto' ? 'border-color: var(--color-accent); color: var(--color-accent)' : ''}
+    >
+      Contacto
+    </a>
+    <button
+      id="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="mobile-menu-toggle btn btn-secondary btn-icon"
+    >
+      <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><rect x="32" y="72" width="192" height="16" rx="4"></rect><rect x="32" y="168" width="192" height="16" rx="4"></rect></svg>
+    </button>
+  </div>
 </header>
 
 <div
@@ -62,6 +84,22 @@ const { currentPath } = Astro.props;
   }
   #mobile-menu[hidden] {
     display: none !important;
+  }
+  .desktop-nav a:hover {
+    color: var(--color-accent);
+  }
+  .desktop-nav,
+  .desktop-contact-btn {
+    display: none;
+  }
+  @media (min-width: 760px) {
+    .desktop-nav,
+    .desktop-contact-btn {
+      display: flex;
+    }
+    .mobile-menu-toggle {
+      display: none;
+    }
   }
 </style>
 
