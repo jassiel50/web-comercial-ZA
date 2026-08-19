@@ -1,0 +1,95 @@
+---
+import { navLinks, WHATSAPP_URL } from '../data/nav';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+
+interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+---
+<header
+  class="nav"
+  style="position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: color-mix(in srgb, var(--color-bg) 88%, transparent); border-bottom: 1px solid var(--color-divider)"
+>
+  <a href="/" class="nav-brand" style="text-decoration: none; display: flex; align-items: baseline; gap: 6px">
+    <span style="font-family: var(--font-mono); color: var(--color-accent)">ZA</span>
+    <span>Desarrollo Software</span>
+  </a>
+  <button
+    id="menu-toggle"
+    type="button"
+    aria-label="Abrir menú"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    class="btn btn-secondary btn-icon"
+  >
+    <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><rect x="32" y="72" width="192" height="16" rx="4"></rect><rect x="32" y="168" width="192" height="16" rx="4"></rect></svg>
+  </button>
+</header>
+
+<div
+  id="mobile-menu"
+  hidden
+  style="position: fixed; inset: 0; z-index: 100; background: var(--color-bg); display: flex; flex-direction: column"
+>
+  <div class="nav" style="border-bottom: 1px solid var(--color-divider)">
+    <span class="nav-brand" style="font-family: var(--font-mono); color: var(--color-accent)">ZA</span>
+    <button id="menu-close" type="button" aria-label="Cerrar menú" class="btn btn-secondary btn-icon">×</button>
+  </div>
+  <nav style="display: flex; flex-direction: column; gap: 6px; padding: 32px clamp(20px,6vw,64px); flex: 1">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        aria-current={currentPath === link.href ? 'page' : undefined}
+        class="mobile-menu-link"
+        style={`font-family: var(--font-heading); font-weight: 500; font-size: 30px; color: ${currentPath === link.href ? 'var(--color-accent)' : 'var(--color-text)'}; text-decoration: none; padding: 10px 0`}
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+  <div style="padding: 24px clamp(20px,6vw,64px); border-top: 1px solid var(--color-divider)">
+    <a href={WHATSAPP_URL} target="_blank" rel="noopener" class="btn btn-primary btn-block">
+      <WhatsAppIcon size={16} />
+      Escribir por WhatsApp
+    </a>
+  </div>
+</div>
+
+<style>
+  .mobile-menu-link:hover {
+    color: var(--color-accent) !important;
+  }
+  #mobile-menu[hidden] {
+    display: none !important;
+  }
+</style>
+
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const closeBtn = document.getElementById('menu-close');
+  const menu = document.getElementById('mobile-menu');
+
+  function openMenu() {
+    if (!menu || !toggleBtn) return;
+    menu.hidden = false;
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.setAttribute('aria-label', 'Cerrar menú');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    if (!menu || !toggleBtn) return;
+    menu.hidden = true;
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-label', 'Abrir menú');
+    document.body.style.overflow = '';
+  }
+
+  toggleBtn?.addEventListener('click', () => {
+    if (menu?.hidden) openMenu();
+    else closeMenu();
+  });
+  closeBtn?.addEventListener('click', closeMenu);
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+</script>

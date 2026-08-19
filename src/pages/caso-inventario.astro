@@ -1,0 +1,23 @@
+---
+import CaseStudyLayout from '../components/CaseStudyLayout.astro';
+---
+<CaseStudyLayout
+  pageTitle="Caso de estudio — Sistema de inventario · ZA Desarrollo Software"
+  heading="Sistema de control de inventario y almacén"
+  intro="Un panel centralizado para reemplazar hojas de cálculo y procesos manuales de conteo de stock."
+  headerTags={['Blazor WebAssembly', 'SQL Server', 'Radzen']}
+  heroSrc="/images/erp-dashboard.jpg"
+  heroAlt="Captura general del sistema de inventario"
+  problem="El control de inventario se llevaba en hojas de cálculo compartidas por correo. Cada actualización llegaba tarde, los conteos no coincidían entre bodega y administración, y no había forma de saber quién había movido el stock ni cuándo."
+  solution="Se construyó un sistema web con Blazor WebAssembly y componentes Radzen para el panel de control, con SQL Server como base de datos transaccional. Cada movimiento de stock — ingreso, salida o ajuste — queda registrado con usuario y fecha, y los reportes de inventario se generan al instante en lugar de armarse a mano al final del mes."
+  shots={[
+    { caption: 'Panel de control de stock' },
+    { caption: 'Historial de movimientos auditado' },
+  ]}
+  results={[
+    { title: 'Tiempo real', body: 'Bodega y administración comparten el mismo dato de stock, sin retrasos.' },
+    { title: 'Trazabilidad total', body: 'Cada ingreso, salida o ajuste queda registrado con usuario y fecha.' },
+  ]}
+  techStack={['Blazor WebAssembly', 'C#', 'ASP.NET Core', 'SQL Server', 'Radzen']}
+  ctaText="¿Tienes un problema de control de inventario o stock parecido?"
+/>

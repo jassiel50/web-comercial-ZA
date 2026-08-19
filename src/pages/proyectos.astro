@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'Sistema de control de inventario y almacén',
+    summary: 'Reemplazo de hojas de cálculo y procesos manuales por un panel centralizado con trazabilidad de stock, movimientos auditados y reportes al instante.',
+    tags: ['Blazor WebAssembly', 'SQL Server', 'Radzen'],
+    href: '/caso-inventario',
+    imgSrc: '/images/erp-dashboard.jpg',
+  },
+  {
+    title: 'Portal de gestión para clientes y proveedores',
+    summary: 'Un portal con roles y permisos donde cada cliente ve solo su información — pedidos, documentos y estados — sin depender de correos sueltos.',
+    tags: ['Blazor WebAssembly', 'C#', 'SQL Server'],
+    href: '/caso-portal',
+    imgSrc: '/images/server-room.jpg',
+  },
+  {
+    title: 'Plataforma administrativa con acceso seguro por roles',
+    summary: 'Autenticación robusta y control granular de permisos para equipos internos de distintas áreas, con administración de accesos autogestionada.',
+    tags: ['C#', '.NET', 'Radzen', 'SQL Server'],
+    href: '/caso-plataforma',
+    imgSrc: '/images/network-security.jpg',
+  },
+];
+---
+<Layout title="Proyectos — ZA Desarrollo Software" footerVariant="full">
+  <main style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px,5vw,64px)">
+    <section style="padding: 72px 0 24px">
+      <span style="display: block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 18px">Proyectos</span>
+      <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4.4vw,42px); margin: 0; max-width: 24ch">Sistemas hechos para reemplazar procesos manuales.</h1>
+      <p style="font-size: 16px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 72%, transparent); max-width: 60ch; margin: 20px 0 0">Cada proyecto nace de un problema operativo concreto: información dispersa, procesos manuales o falta de control. Los siguientes son ejemplos representativos del tipo de sistemas que construyo — las capturas y datos mostrados no corresponden a clientes reales.</p>
+    </section>
+
+    <section style="padding: 40px 0 96px; display: flex; flex-direction: column; gap: 24px">
+      {projects.map((p) => (
+        <a href={p.href} data-reveal="1" class="card elev-sm project-row" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap: 28px; align-items: center; text-decoration: none; color: inherit; transition: box-shadow .25s ease">
+          <div style="width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-sm); overflow: hidden">
+            <img src={p.imgSrc} alt={p.title} class="img-cover" />
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <h2 class="card-title" style="font-size: 22px">{p.title}</h2>
+            <p class="card-body" style="opacity: 1; color: color-mix(in srgb, var(--color-text) 72%, transparent)">{p.summary}</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
+              {p.tags.map((t) => (
+                <span class="tag tag-accent" style="font-family: var(--font-mono); font-size: 10.5px">{t}</span>
+              ))}
+            </div>
+            <span style="font-size: 13px; font-weight: 500; color: var(--color-accent); margin-top: 4px">Ver caso de estudio →</span>
+          </div>
+        </a>
+      ))}
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .project-row:hover {
+    box-shadow: var(--shadow-md);
+  }
+</style>

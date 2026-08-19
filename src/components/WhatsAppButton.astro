@@ -1,0 +1,13 @@
+---
+import { WHATSAPP_URL } from '../data/nav';
+import WhatsAppIcon from './WhatsAppIcon.astro';
+---
+<a
+  href={WHATSAPP_URL}
+  target="_blank"
+  rel="noopener"
+  aria-label="Escribir por WhatsApp"
+  style="position: fixed; bottom: 22px; right: 22px; z-index: 90; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: var(--color-accent); color: var(--color-bg); border-radius: 50%; box-shadow: var(--shadow-lg); text-decoration: none; animation: waPulse 2.4s ease-in-out infinite"
+>
+  <WhatsAppIcon size={24} />
+</a>

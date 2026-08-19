@@ -1,0 +1,41 @@
+---
+import { navLinks } from '../data/nav';
+
+interface Props {
+  variant?: 'full' | 'simple';
+}
+const { variant = 'simple' } = Astro.props;
+---
+{variant === 'full' ? (
+  <footer style="padding: 40px clamp(20px,5vw,64px) 32px; border-top: 1px solid var(--color-divider); max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px">
+      <div style="max-width: 32ch">
+        <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px">
+          <span style="font-family: var(--font-mono); font-weight: 600; color: var(--color-accent); font-size: 15px">ZA</span>
+          <span style="font-family: var(--font-heading); font-weight: 500; font-size: 14px">Desarrollo Software</span>
+        </div>
+        <p style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent); margin: 0">Sistemas administrativos, portales y automatizaciones para empresas.</p>
+      </div>
+      <nav style="display: flex; gap: 20px; flex-wrap: wrap">
+        {navLinks.map((link) => (
+          <a href={link.href} class="footer-link" style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 70%, transparent); text-decoration: none">{link.label}</a>
+        ))}
+      </nav>
+    </div>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 40%, transparent)">
+      <span>© 2026 ZA Desarrollo Software</span>
+      <span>Blazor WebAssembly · C# · SQL Server · Radzen</span>
+    </div>
+  </footer>
+) : (
+  <footer style="padding: 40px clamp(20px,5vw,64px) 32px; border-top: 1px solid var(--color-divider); max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: var(--font-mono); font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 40%, transparent)">
+    <span>© 2026 ZA Desarrollo Software</span>
+    <a href="/" class="footer-link" style="color: color-mix(in srgb, var(--color-text) 40%, transparent); text-decoration: none">Volver al inicio</a>
+  </footer>
+)}
+
+<style>
+  .footer-link:hover {
+    color: var(--color-accent) !important;
+  }
+</style>

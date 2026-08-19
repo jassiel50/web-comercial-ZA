@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contacto — ZA Desarrollo Software</title>
+<link rel="stylesheet" href="_ds/nocturne-7ec0e9ad-660c-46b4-9edc-624efba23b51/styles.css">
+<script src="_ds/nocturne-7ec0e9ad-660c-46b4-9edc-624efba23b51/_ds_bundle.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 45%, transparent), var(--shadow-lg); }
+  50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--color-accent) 0%, transparent), var(--shadow-lg); }
+}
+</style>
+</helmet>
+
+<header class="nav" style="position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: color-mix(in srgb, var(--color-bg) 88%, transparent); border-bottom: 1px solid var(--color-divider)">
+  <a href="./index.dc.html" class="nav-brand" style="text-decoration: none; display: flex; align-items: baseline; gap: 6px">
+    <span style="font-family: 'JetBrains Mono', monospace; color: var(--color-accent)">ZA</span>
+    <span>Desarrollo Software</span>
+  </a>
+  <button onClick="{{ toggleMenu }}" aria-label="Abrir menú" class="btn btn-secondary btn-icon">
+    <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><rect x="32" y="72" width="192" height="16" rx="4"></rect><rect x="32" y="168" width="192" height="16" rx="4"></rect></svg>
+  </button>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position: fixed; inset: 0; z-index: 100; background: var(--color-bg); display: flex; flex-direction: column">
+    <div class="nav" style="border-bottom: 1px solid var(--color-divider)">
+      <span class="nav-brand" style="font-family: 'JetBrains Mono', monospace; color: var(--color-accent)">ZA</span>
+      <button onClick="{{ toggleMenu }}" aria-label="Cerrar menú" class="btn btn-secondary btn-icon">×</button>
+    </div>
+    <nav style="display: flex; flex-direction: column; gap: 6px; padding: 32px clamp(20px,6vw,64px); flex: 1">
+      <a href="./index.dc.html" style="font-family: var(--font-heading); font-weight: 500; font-size: 30px; color: var(--color-text); text-decoration: none; padding: 10px 0" style-hover="color: var(--color-accent)">Inicio</a>
+      <a href="./proyectos.dc.html" style="font-family: var(--font-heading); font-weight: 500; font-size: 30px; color: var(--color-text); text-decoration: none; padding: 10px 0" style-hover="color: var(--color-accent)">Proyectos</a>
+      <a href="./sobre-mi.dc.html" style="font-family: var(--font-heading); font-weight: 500; font-size: 30px; color: var(--color-text); text-decoration: none; padding: 10px 0" style-hover="color: var(--color-accent)">Sobre mí</a>
+      <a href="./servicios.dc.html" style="font-family: var(--font-heading); font-weight: 500; font-size: 30px; color: var(--color-text); text-decoration: none; padding: 10px 0" style-hover="color: var(--color-accent)">Servicios</a>
+      <a href="./contacto.dc.html" style="font-family: var(--font-heading); font-weight: 500; font-size: 30px; color: var(--color-accent); text-decoration: none; padding: 10px 0">Contacto</a>
+    </nav>
+    <div style="padding: 24px clamp(20px,6vw,64px); border-top: 1px solid var(--color-divider)">
+      <a href="https://wa.me/528117788448" target="_blank" rel="noopener" class="btn btn-primary btn-block">
+        <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,212.51a8,8,0,0,0,9.66,10.15l36.94-10.87A104,104,0,1,0,128,24Zm0,192a88,88,0,0,1-44.9-12.35,8,8,0,0,0-6.11-.8L48,210l7.34-24.68a8,8,0,0,0-.9-6.5A88,88,0,1,1,128,216Zm45.42-58.11-19.36-9.27a8,8,0,0,0-8.16.86l-7.44,5.9a48.28,48.28,0,0,1-21-14.09,48.87,48.87,0,0,1-11.5-19.55l6.6-6.19a8,8,0,0,0,1.79-8.5l-8.5-20.13a8,8,0,0,0-7.53-4.9,20.09,20.09,0,0,0-15.14,7.11c-9.34,10.91-9.44,28.14.16,45.42a94.94,94.94,0,0,0,26.06,29.4c15.1,11.51,32.14,17.24,44.94,17.24h.14a20.16,20.16,0,0,0,15.31-7.34,8,8,0,0,0-1.37-11.86Z"></path></svg>
+        Escribir por WhatsApp
+      </a>
+    </div>
+  </div>
+</sc-if>
+
+<main style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px,5vw,64px)">
+  <section style="padding: 72px 0 48px">
+    <span style="display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: color-mix(in srgb, var(--color-text) 75%, transparent); background: color-mix(in srgb, var(--color-surface) 55%, transparent); backdrop-filter: blur(10px); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); padding: 6px 12px; border-radius: 999px; margin-bottom: 24px">
+      <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); flex: none"></span>
+      Disponibilidad: nuevos proyectos 2026
+    </span>
+    <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4.4vw,44px); margin: 0; max-width: 18ch">Hablemos de tu próximo proyecto.</h1>
+    <p style="font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 78%, transparent); max-width: 54ch; margin: 20px 0 0">Diseño y construyo sistemas de software para empresas que necesitan fiabilidad estructural, no una plantilla genérica. Cuento con portafolio de evidencias y referencias de otros sistemas que he desarrollado.</p>
+  </section>
+
+  <section style="padding: 0 0 96px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 40px; align-items: start">
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <a href="https://wa.me/528117788448" target="_blank" rel="noopener" class="card" style="flex-direction: row; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: box-shadow .25s ease" style-hover="box-shadow: 0 0 0 1px var(--color-accent)">
+        <div style="width: 44px; height: 44px; flex: none; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--color-accent) 14%, transparent); display: flex; align-items: center; justify-content: center; color: var(--color-accent)">
+          <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,212.51a8,8,0,0,0,9.66,10.15l36.94-10.87A104,104,0,1,0,128,24Zm0,192a88,88,0,0,1-44.9-12.35,8,8,0,0,0-6.11-.8L48,210l7.34-24.68a8,8,0,0,0-.9-6.5A88,88,0,1,1,128,216Zm45.42-58.11-19.36-9.27a8,8,0,0,0-8.16.86l-7.44,5.9a48.28,48.28,0,0,1-21-14.09,48.87,48.87,0,0,1-11.5-19.55l6.6-6.19a8,8,0,0,0,1.79-8.5l-8.5-20.13a8,8,0,0,0-7.53-4.9,20.09,20.09,0,0,0-15.14,7.11c-9.34,10.91-9.44,28.14.16,45.42a94.94,94.94,0,0,0,26.06,29.4c15.1,11.51,32.14,17.24,44.94,17.24h.14a20.16,20.16,0,0,0,15.31-7.34,8,8,0,0,0-1.37-11.86Z"></path></svg>
+        </div>
+        <div style="flex: 1">
+          <h2 class="card-kicker" style="margin-bottom: 4px">WhatsApp directo</h2>
+          <p style="font-size: 15.5px; font-weight: 500; margin: 0">+52 811 778 8448</p>
+        </div>
+        <span style="color: var(--color-accent)">→</span>
+      </a>
+      <a href="mailto:contacto@zadesarrollo.com" class="card" style="flex-direction: row; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: box-shadow .25s ease" style-hover="box-shadow: 0 0 0 1px var(--color-accent)">
+        <div style="width: 44px; height: 44px; flex: none; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--color-accent) 14%, transparent); display: flex; align-items: center; justify-content: center; color: var(--color-accent)">
+          <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12.63,11.51a8,8,0,0,0,10.64,0l12.63-11.51L207.43,192H48.57ZM157.29,128,216,74.18V181.82Z"></path></svg>
+        </div>
+        <div style="flex: 1">
+          <h2 class="card-kicker" style="margin-bottom: 4px">Correo</h2>
+          <p style="font-size: 15.5px; font-weight: 500; margin: 0">contacto@zadesarrollo.com</p>
+        </div>
+        <span style="color: var(--color-accent)">→</span>
+      </a>
+      <p style="font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 50%, transparent); margin: 4px 4px 0; font-family: 'JetBrains Mono', monospace">Ing. Jassiel Zamarrón</p>
+      <div style="position: relative; width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-lg); overflow: hidden; margin-top: 8px">
+        <image-slot id="contacto-img" shape="rect" placeholder="arquitectura del sistema" src="./assets/db-schema.jpg"></image-slot>
+        <span style="position: absolute; top: 14px; left: 14px; pointer-events: none; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 5px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">Arquitectura ilustrativa</span>
+      </div>
+    </div>
+
+    <div class="card" style="padding: 32px">
+      <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; margin: 0 0 24px">Consulta de proyecto</h2>
+      <form onSubmit="{{ handleSubmit }}" style="display: flex; flex-direction: column; gap: 18px">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 16px">
+          <div class="field">
+            <label>Nombre</label>
+            <input class="input" type="text" required="{{ true }}" value="{{ form.name }}" onChange="{{ setField('name') }}" placeholder="Tu nombre" />
+          </div>
+          <div class="field">
+            <label>Empresa</label>
+            <input class="input" type="text" value="{{ form.company }}" onChange="{{ setField('company') }}" placeholder="Opcional" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Correo</label>
+          <input class="input" type="email" required="{{ true }}" value="{{ form.email }}" onChange="{{ setField('email') }}" placeholder="correo@empresa.com" />
+        </div>
+        <div class="field">
+          <label>Descripción del proyecto</label>
+          <textarea class="input" required="{{ true }}" value="{{ form.message }}" onChange="{{ setField('message') }}" placeholder="Qué proceso o problema necesitas resolver…" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start">Enviar propuesta →</button>
+        <sc-if value="{{ form.sent }}" hint-placeholder-val="{{ false }}">
+          <p style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 60%, transparent); margin: 0">&gt; Se abrió tu cliente de correo con la propuesta. Si no ocurre, escribe directamente a contacto@zadesarrollo.com.</p>
+        </sc-if>
+      </form>
+    </div>
+  </section>
+
+  <section data-reveal="1" style="padding: 0 0 96px; opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; border-top: 1px solid var(--color-divider)">
+    <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(20px,2.4vw,24px); margin: 32px 0 24px">Preguntas frecuentes</h2>
+    <div style="display: flex; flex-direction: column">
+      <sc-for list="{{ faqs }}" as="faq" $index="i" hint-placeholder-count="5">
+        <div style="border-top: 1px solid var(--color-divider)">
+          <button onClick="{{ toggleFaq(i) }}" style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; background: transparent; border: none; text-align: left; cursor: pointer; color: var(--color-text)">
+            <span style="font-family: var(--font-heading); font-weight: 500; font-size: 15.5px">{{ faq.q }}</span>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; color: var(--color-accent); flex: none">{{ faq.sign }}</span>
+          </button>
+          <sc-if value="{{ faq.open }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size: 14.5px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 72%, transparent); margin: 0 0 20px; max-width: 58ch">{{ faq.a }}</p>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</main>
+
+
+<a href="https://wa.me/528117788448" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="position: fixed; bottom: 22px; right: 22px; z-index: 90; display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; background: var(--color-accent); color: var(--color-bg); border-radius: 50%; box-shadow: var(--shadow-lg); text-decoration: none; animation: waPulse 2.4s ease-in-out infinite">
+  <svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,212.51a8,8,0,0,0,9.66,10.15l36.94-10.87A104,104,0,1,0,128,24Zm0,192a88,88,0,0,1-44.9-12.35,8,8,0,0,0-6.11-.8L48,210l7.34-24.68a8,8,0,0,0-.9-6.5A88,88,0,1,1,128,216Zm45.42-58.11-19.36-9.27a8,8,0,0,0-8.16.86l-7.44,5.9a48.28,48.28,0,0,1-21-14.09,48.87,48.87,0,0,1-11.5-19.55l6.6-6.19a8,8,0,0,0,1.79-8.5l-8.5-20.13a8,8,0,0,0-7.53-4.9,20.09,20.09,0,0,0-15.14,7.11c-9.34,10.91-9.44,28.14.16,45.42a94.94,94.94,0,0,0,26.06,29.4c15.1,11.51,32.14,17.24,44.94,17.24h.14a20.16,20.16,0,0,0,15.31-7.34,8,8,0,0,0-1.37-11.86Z"></path></svg>
+</a>
+<footer style="padding: 40px clamp(20px,5vw,64px) 32px; border-top: 1px solid var(--color-divider); max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: color-mix(in srgb, var(--color-text) 40%, transparent)">
+  <span>© 2026 ZA Desarrollo Software</span>
+  <a href="./index.dc.html" style="color: color-mix(in srgb, var(--color-text) 40%, transparent); text-decoration: none" style-hover="color: var(--color-accent)">Volver al inicio</a>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    menuOpen: false,
+    openIndex: null,
+    form: { name: '', company: '', email: '', message: '', sent: false },
+    faqData: [
+      { q: '¿Trabajas con empresas fuera de mi país?', a: 'Sí, trabajo de forma remota con clientes en distintas ubicaciones; toda la comunicación y seguimiento se hace en línea.' },
+      { q: '¿Cuánto tiempo toma desarrollar un sistema?', a: 'Depende del alcance. Un módulo acotado puede tomar unas semanas; una plataforma completa con varios roles y flujos toma más tiempo. Lo defino junto contigo después del diagnóstico inicial.' },
+      { q: '¿Qué pasa si necesito cambios después de la entrega?', a: 'Ofrezco soporte posterior a la entrega y puedo tomar nuevas fases de desarrollo cuando el negocio lo necesite.' },
+      { q: '¿Trabajas solo con Blazor o también otras tecnologías?', a: 'Blazor WebAssembly, C# y SQL Server son mi stack principal, y también desarrollo apps móviles (Android/iOS) e implementaciones en la nube con Azure cuando el proyecto lo requiere.' },
+      { q: '¿Puedo ver el sistema mientras se construye?', a: 'Sí. Trabajo en iteraciones revisables, así que puedes ver avances reales del sistema durante el desarrollo, no solo al final.' },
+    ],
+  };
+
+  componentDidMount() {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => io.observe(el));
+    this._io = io;
+    this._fallback = setTimeout(() => {
+      document.querySelectorAll('[data-reveal]').forEach((el) => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }, 1500);
+  }
+
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._fallback) clearTimeout(this._fallback);
+  }
+
+  renderVals() {
+    const faqs = this.state.faqData.map((f, i) => ({
+      ...f,
+      open: this.state.openIndex === i,
+      sign: this.state.openIndex === i ? '−' : '+',
+    }));
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      form: this.state.form,
+      setField: (field) => (e) => {
+        const value = e.target.value;
+        this.setState((s) => ({ form: { ...s.form, [field]: value } }));
+      },
+      handleSubmit: (e) => {
+        e.preventDefault();
+        const { name, company, email, message } = this.state.form;
+        const subject = encodeURIComponent(`Consulta de proyecto — ${name || 'Nuevo contacto'}`);
+        const body = encodeURIComponent(
+          `Nombre: ${name}\nEmpresa: ${company || '—'}\nCorreo: ${email}\n\n${message}`
+        );
+        window.location.href = `mailto:contacto@zadesarrollo.com?subject=${subject}&body=${body}`;
+        this.setState((s) => ({ form: { ...s.form, sent: true } }));
+      },
+      faqs,
+      toggleFaq: (i) => () => this.setState((s) => ({ openIndex: s.openIndex === i ? null : i })),
+    };
+  }
+}
+
+</script>
+</body>
+</html>

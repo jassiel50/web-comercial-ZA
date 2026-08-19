@@ -1,0 +1,23 @@
+---
+import CaseStudyLayout from '../components/CaseStudyLayout.astro';
+---
+<CaseStudyLayout
+  pageTitle="Caso de estudio — Portal de gestión · ZA Desarrollo Software"
+  heading="Portal de gestión para clientes y proveedores"
+  intro="Un portal con acceso diferenciado donde cada cliente ve solo lo que le corresponde."
+  headerTags={['Blazor WebAssembly', 'C#', 'SQL Server']}
+  heroSrc="/images/server-room.jpg"
+  heroAlt="Captura general del portal de gestión"
+  problem="La comunicación con clientes y proveedores dependía de correos, llamadas y archivos adjuntos sueltos. No existía un lugar único donde cada cliente pudiera ver el estado de sus pedidos o documentos sin tener que preguntar."
+  solution="Se desarrolló un portal con autenticación propia donde cada cliente y proveedor accede únicamente a su información mediante un sistema de roles y permisos. La interfaz se construyó con Blazor WebAssembly y componentes Radzen, consumiendo una API en C# sobre SQL Server, con la opción de alojarse en la nube (Azure) o en el servidor del propio negocio."
+  shots={[
+    { caption: 'Panel del cliente' },
+    { caption: 'Gestión de permisos por rol' },
+  ]}
+  results={[
+    { title: 'Autoservicio', body: 'Clientes y proveedores consultan su estado sin escribir un correo.' },
+    { title: 'Menos soporte manual', body: 'El equipo interno dejó de responder solicitudes repetitivas por correo.' },
+  ]}
+  techStack={['Blazor WebAssembly', 'C#', 'SQL Server', 'Radzen', 'Azure', 'Autenticación por roles']}
+  ctaText="¿Necesitas que tus clientes o proveedores tengan su propio portal?"
+/>

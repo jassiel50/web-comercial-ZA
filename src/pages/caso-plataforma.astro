@@ -1,0 +1,23 @@
+---
+import CaseStudyLayout from '../components/CaseStudyLayout.astro';
+---
+<CaseStudyLayout
+  pageTitle="Caso de estudio — Plataforma con acceso por roles · ZA Desarrollo Software"
+  heading="Plataforma administrativa con acceso seguro por roles"
+  intro="Control granular de permisos para equipos internos de distintas áreas."
+  headerTags={['C#', '.NET', 'SQL Server']}
+  heroSrc="/images/network-security.jpg"
+  heroAlt="Captura general de la plataforma administrativa"
+  problem="Varias áreas de la empresa —ventas, operaciones, finanzas— necesitaban acceso a información compartida, pero sin visibilidad total entre ellas. Las herramientas existentes no distinguían quién debía ver qué, lo que generaba errores y filtraciones de información sensible."
+  solution="Se implementó una plataforma con autenticación y permisos por rol y por área, construida sobre Blazor WebAssembly y SQL Server, con la infraestructura alojada en Azure. Cada usuario ve únicamente los módulos y datos que le corresponden, con un panel de administración para gestionar accesos sin intervención técnica."
+  shots={[
+    { caption: 'Administración de accesos por rol' },
+    { caption: 'Pantalla de acceso' },
+  ]}
+  results={[
+    { title: 'Accesos autogestionados', body: 'La empresa da de alta o revoca accesos sin depender de soporte técnico externo.' },
+    { title: 'Datos segmentados', body: 'Cada rol ve solo la información que le corresponde.' },
+  ]}
+  techStack={['Blazor WebAssembly', 'C#', 'ASP.NET Core Identity', 'SQL Server', 'Azure', 'Radzen']}
+  ctaText="¿Necesitas controlar quién ve qué dentro de tu empresa?"
+/>
