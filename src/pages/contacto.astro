@@ -12,19 +12,22 @@ const faqs = [
 ];
 ---
 <Layout title="Contacto — ZA Desarrollo Software">
-  <main style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px,5vw,64px)">
-    <section style="padding: 72px 0 48px">
+  <main>
+    <section style="background: var(--color-bg)">
+     <div class="wrap" style="padding-block: 36px 40px">
       <span style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: color-mix(in srgb, var(--color-text) 75%, transparent); background: color-mix(in srgb, var(--color-surface) 55%, transparent); backdrop-filter: blur(10px); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); padding: 6px 12px; border-radius: 999px; margin-bottom: 24px">
         <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); flex: none"></span>
         Disponibilidad: nuevos proyectos 2026
       </span>
       <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4.4vw,44px); margin: 0; max-width: 18ch">Hablemos de tu próximo proyecto.</h1>
       <p style="font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 78%, transparent); max-width: 54ch; margin: 20px 0 0">Diseño y construyo sistemas de software para empresas que necesitan fiabilidad estructural, no una plantilla genérica. Cuento con portafolio de evidencias y referencias de otros sistemas que he desarrollado.</p>
+     </div>
     </section>
 
-    <section style="padding: 0 0 96px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 40px; align-items: start">
+    <section style="background: var(--color-surface)">
+     <div class="stack-mobile wrap" style="padding-block: 40px 96px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 40px; align-items: start">
       <div style="display: flex; flex-direction: column; gap: 14px">
-        <a href={WHATSAPP_URL} target="_blank" rel="noopener" class="card contact-card" style="flex-direction: row; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: box-shadow .25s ease">
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener" class="card contact-card" style="flex-direction: row; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: box-shadow .25s ease; background: var(--color-bg)">
           <div style="width: 44px; height: 44px; flex: none; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--color-accent) 14%, transparent); display: flex; align-items: center; justify-content: center; color: var(--color-accent)">
             <WhatsAppIcon size={22} />
           </div>
@@ -34,7 +37,7 @@ const faqs = [
           </div>
           <span style="color: var(--color-accent)">→</span>
         </a>
-        <a href={`mailto:${CONTACT_EMAIL}`} class="card contact-card" style="flex-direction: row; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: box-shadow .25s ease">
+        <a href={`mailto:${CONTACT_EMAIL}`} class="card contact-card" style="flex-direction: row; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: box-shadow .25s ease; background: var(--color-bg)">
           <div style="width: 44px; height: 44px; flex: none; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--color-accent) 14%, transparent); display: flex; align-items: center; justify-content: center; color: var(--color-accent)">
             <svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12.63,11.51a8,8,0,0,0,10.64,0l12.63-11.51L207.43,192H48.57ZM157.29,128,216,74.18V181.82Z"></path></svg>
           </div>
@@ -46,12 +49,12 @@ const faqs = [
         </a>
         <p style="font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 50%, transparent); margin: 4px 4px 0; font-family: var(--font-mono)">Ing. Jassiel Zamarrón</p>
         <div style="position: relative; width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-lg); overflow: hidden; margin-top: 8px">
-          <img src="/images/db-schema.jpg" alt="Arquitectura ilustrativa del sistema" class="img-cover" />
-          <span style="position: absolute; top: 14px; left: 14px; pointer-events: none; font-family: var(--font-mono); font-size: 10.5px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 5px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">Arquitectura ilustrativa</span>
+          <img src="/images/desk-setup.jpg" alt="Espacio de trabajo de Ing. Jassiel Zamarrón" class="img-cover" />
+          <span style="position: absolute; top: 14px; left: 14px; pointer-events: none; font-family: var(--font-mono); font-size: 10.5px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 5px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">Donde construyo tu sistema</span>
         </div>
       </div>
 
-      <div class="card" style="padding: 32px">
+      <div class="card" style="padding: 32px; background: var(--color-bg)">
         <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; margin: 0 0 24px">Consulta de proyecto</h2>
         <form id="contact-form" style="display: flex; flex-direction: column; gap: 18px">
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(160px,100%),1fr)); gap: 16px">
@@ -76,21 +79,24 @@ const faqs = [
           <p id="contact-sent" hidden style="font-family: var(--font-mono); font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 60%, transparent); margin: 0">&gt; Se abrió tu cliente de correo con la propuesta. Si no ocurre, escribe directamente a {CONTACT_EMAIL}.</p>
         </form>
       </div>
+     </div>
     </section>
 
-    <section data-reveal="1" style="padding: 0 0 96px; border-top: 1px solid var(--color-divider)">
-      <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(20px,2.4vw,24px); margin: 32px 0 24px">Preguntas frecuentes</h2>
+    <section style="background: var(--color-section)">
+     <div data-reveal="1" class="wrap" style="padding-block: 56px 96px">
+      <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(20px,2.4vw,24px); margin: 0 0 24px">Preguntas frecuentes</h2>
       <div style="display: flex; flex-direction: column">
         {faqs.map((faq, i) => (
           <div class="faq-item" style="border-top: 1px solid var(--color-divider)">
             <button type="button" class="faq-toggle" data-faq={i} style="width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; background: transparent; border: none; text-align: left; cursor: pointer; color: var(--color-text)">
-              <span style="font-family: var(--font-heading); font-weight: 500; font-size: 15.5px">{faq.q}</span>
-              <span class="faq-sign" style="font-family: var(--font-mono); font-size: 16px; color: var(--color-accent); flex: none">+</span>
+              <span style="font-family: var(--font-heading); font-weight: 500; font-size: 17px">{faq.q}</span>
+              <span class="faq-sign" style="font-family: var(--font-mono); font-size: 18px; color: var(--color-accent); flex: none">+</span>
             </button>
-            <p class="faq-answer" hidden style="font-size: 14.5px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 72%, transparent); margin: 0 0 20px; max-width: 58ch">{faq.a}</p>
+            <p class="faq-answer" hidden style="font-size: 15.5px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 72%, transparent); margin: 0 0 20px; max-width: 58ch">{faq.a}</p>
           </div>
         ))}
       </div>
+     </div>
     </section>
   </main>
 </Layout>

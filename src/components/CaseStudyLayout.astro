@@ -40,28 +40,31 @@ const {
 } = Astro.props;
 ---
 <Layout title={pageTitle}>
-  <main style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px,5vw,64px)">
-    <div style="padding: 40px 0 0">
+  <main>
+    <section style="background: radial-gradient(1000px 500px at 92% -20%, color-mix(in srgb, var(--color-accent-900) 55%, transparent), transparent 60%), var(--color-bg)">
+     <div class="wrap" style="padding-top: 24px">
       <a href="/proyectos" class="back-link" style="font-size: 13.5px; text-decoration: none; color: color-mix(in srgb, var(--color-text) 60%, transparent)">← Proyectos</a>
-    </div>
 
-    <header style="padding: 24px 0 32px">
-      <span style="display: block; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px">Caso de estudio</span>
-      <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4vw,42px); margin: 0; max-width: 28ch">{heading}</h1>
-      <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 72%, transparent); max-width: 60ch; margin: 16px 0 0">{intro}</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px">
-        {headerTags.map((t) => (
-          <span class="tag tag-accent" style="font-family: var(--font-mono)">{t}</span>
-        ))}
+      <header style="padding: 24px 0 32px">
+        <span style="display: block; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 16px">Caso de estudio</span>
+        <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4vw,42px); margin: 0; max-width: 28ch">{heading}</h1>
+        <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 72%, transparent); max-width: 60ch; margin: 16px 0 0">{intro}</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px">
+          {headerTags.map((t) => (
+            <span class="tag tag-accent" style="font-family: var(--font-mono)">{t}</span>
+          ))}
+        </div>
+      </header>
+
+      <div style="position: relative; width: 100%; aspect-ratio: 16/8; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px">
+        <img src={heroSrc} alt={heroAlt} class="img-cover" />
+        <span style="position: absolute; top: 16px; left: 16px; pointer-events: none; font-family: var(--font-mono); font-size: 11px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">Vista previa — sin datos reales</span>
       </div>
-    </header>
+     </div>
+    </section>
 
-    <div style="position: relative; width: 100%; aspect-ratio: 16/8; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 56px">
-      <img src={heroSrc} alt={heroAlt} class="img-cover" />
-      <span style="position: absolute; top: 16px; left: 16px; pointer-events: none; font-family: var(--font-mono); font-size: 11px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">Vista previa — sin datos reales</span>
-    </div>
-
-    <section style="display: grid; grid-template-columns: minmax(0,1fr) minmax(min(240px,100%),300px); gap: 56px; padding-bottom: 56px">
+    <section style="background: var(--color-surface)">
+     <div class="stack-mobile wrap" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(min(240px,100%),300px); gap: 56px; padding-block: 56px">
       <div style="display: flex; flex-direction: column; gap: 48px">
         <div>
           <span style="display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 14px">01 · El problema</span>
@@ -73,7 +76,7 @@ const {
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px,100%),1fr)); gap: 20px">
             {shots.map((shot) => (
               <figure style="margin: 0">
-                <div style="width: 100%; aspect-ratio: 4/3; border-radius: 10px; background: var(--color-surface); border: 1px dashed var(--color-divider); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px">
+                <div style="width: 100%; aspect-ratio: 4/3; border-radius: 10px; background: var(--color-bg); border: 1px dashed var(--color-divider); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px">
                   <span style="font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 45%, transparent)">{shot.caption}</span>
                 </div>
                 <figcaption>{shot.caption} (placeholder)</figcaption>
@@ -85,26 +88,29 @@ const {
 
       <aside style="display: flex; flex-direction: column; gap: 28px">
         <span style="display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent)">03 · El resultado</span>
-        {results.map((r) => (
-          <div style="border-left: 2px solid var(--color-accent); padding-left: 16px">
-            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 24px; margin: 0 0 6px">{r.title}</p>
-            <p style="font-size: 13px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 65%, transparent); margin: 0">{r.body}</p>
+        {results.map((r, i) => (
+          <div style={`border-left: 2px solid ${['#9184d9','#6ee7b7','#f5b971'][i % 3]}; padding-left: 16px`}>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 25px; margin: 0 0 6px">{r.title}</p>
+            <p style="font-size: 14.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 65%, transparent); margin: 0">{r.body}</p>
           </div>
         ))}
       </aside>
+     </div>
     </section>
 
-    <section style="padding: 32px 0 72px; border-top: 1px solid var(--color-divider)">
-      <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; margin: 32px 0 20px">Stack técnico</h3>
+    <section style="background: linear-gradient(180deg, var(--color-bg), var(--color-section-glow) 260%)">
+     <div class="wrap" style="padding-block: 56px 88px">
+      <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; margin: 0 0 20px">Stack técnico</h3>
       <div style="display: flex; flex-wrap: wrap; gap: 8px">
         {techStack.map((t) => (
           <span class="tag tag-neutral" style="font-family: var(--font-mono)">{t}</span>
         ))}
       </div>
-      <div class="card" style="margin-top: 40px; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+      <div class="card" style="margin-top: 40px; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; background: var(--color-surface)">
         <p style="margin: 0; font-size: 15px; color: color-mix(in srgb, var(--color-text) 85%, transparent); max-width: 40ch">{ctaText}</p>
         <a href="/contacto" class="btn btn-primary" style="white-space: nowrap">Hablemos</a>
       </div>
+     </div>
     </section>
   </main>
 </Layout>

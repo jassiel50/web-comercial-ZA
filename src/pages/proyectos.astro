@@ -26,31 +26,35 @@ const projects = [
 ];
 ---
 <Layout title="Proyectos — ZA Desarrollo Software" footerVariant="full">
-  <main style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px,5vw,64px)">
-    <section style="padding: 72px 0 24px">
-      <span style="display: block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 18px">Proyectos</span>
-      <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4.4vw,42px); margin: 0; max-width: 24ch">Sistemas hechos para reemplazar procesos manuales.</h1>
-      <p style="font-size: 16px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 72%, transparent); max-width: 60ch; margin: 20px 0 0">Cada proyecto nace de un problema operativo concreto: información dispersa, procesos manuales o falta de control. Los siguientes son ejemplos representativos del tipo de sistemas que construyo — las capturas y datos mostrados no corresponden a clientes reales.</p>
+  <main>
+    <section style="background: radial-gradient(1000px 500px at 92% -20%, color-mix(in srgb, var(--color-accent-900) 55%, transparent), transparent 60%), var(--color-bg)">
+      <div class="wrap" style="padding-block: 32px 24px">
+        <span style="display: block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 18px">Proyectos</span>
+        <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4.4vw,42px); margin: 0; max-width: 24ch">Sistemas hechos para reemplazar procesos manuales.</h1>
+        <p style="font-size: 16px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 72%, transparent); max-width: 60ch; margin: 20px 0 0">Cada proyecto nace de un problema operativo concreto: información dispersa, procesos manuales o falta de control. Los siguientes son ejemplos representativos del tipo de sistemas que construyo — las capturas y datos mostrados no corresponden a clientes reales.</p>
+      </div>
     </section>
 
-    <section style="padding: 40px 0 96px; display: flex; flex-direction: column; gap: 24px">
-      {projects.map((p) => (
-        <a href={p.href} data-reveal="1" class="card elev-sm project-row" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap: 28px; align-items: center; text-decoration: none; color: inherit; transition: box-shadow .25s ease">
-          <div style="width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-sm); overflow: hidden">
-            <img src={p.imgSrc} alt={p.title} class="img-cover" />
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 12px">
-            <h2 class="card-title" style="font-size: 22px">{p.title}</h2>
-            <p class="card-body" style="opacity: 1; color: color-mix(in srgb, var(--color-text) 72%, transparent)">{p.summary}</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 6px">
-              {p.tags.map((t) => (
-                <span class="tag tag-accent" style="font-family: var(--font-mono); font-size: 10.5px">{t}</span>
-              ))}
+    <section style="background: var(--color-surface)">
+      <div class="wrap" style="padding-block: 40px 96px; display: flex; flex-direction: column; gap: 24px">
+        {projects.map((p) => (
+          <a href={p.href} data-reveal="1" class="card elev-sm project-row stack-mobile" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap: 28px; align-items: center; text-decoration: none; color: inherit; transition: box-shadow .25s ease; background: var(--color-bg)">
+            <div style="width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-sm); overflow: hidden">
+              <img src={p.imgSrc} alt={p.title} class="img-cover" />
             </div>
-            <span style="font-size: 13px; font-weight: 500; color: var(--color-accent); margin-top: 4px">Ver caso de estudio →</span>
-          </div>
-        </a>
-      ))}
+            <div style="display: flex; flex-direction: column; gap: 12px">
+              <h2 class="card-title" style="font-size: 22px">{p.title}</h2>
+              <p class="card-body" style="opacity: 1; color: color-mix(in srgb, var(--color-text) 72%, transparent)">{p.summary}</p>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px">
+                {p.tags.map((t) => (
+                  <span class="tag tag-accent" style="font-family: var(--font-mono)">{t}</span>
+                ))}
+              </div>
+              <span style="font-size: 14.5px; font-weight: 500; color: var(--color-accent); margin-top: 4px">Ver caso de estudio →</span>
+            </div>
+          </a>
+        ))}
+      </div>
     </section>
   </main>
 </Layout>
