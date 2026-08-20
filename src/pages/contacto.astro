@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import WhatsAppIcon from '../components/WhatsAppIcon.astro';
+import LogoMark from '../components/LogoMark.astro';
 import { WHATSAPP_URL, WHATSAPP_DISPLAY, CONTACT_EMAIL } from '../data/nav';
 
 const faqs = [
@@ -57,6 +58,7 @@ const faqs = [
         </div>
       </div>
 
+      <div>
       <div class="card" style="padding: 32px; background: var(--color-bg)">
         <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; margin: 0 0 24px">Consulta de proyecto</h2>
         <form id="contact-form" style="display: flex; flex-direction: column; gap: 18px">
@@ -81,6 +83,10 @@ const faqs = [
           <button type="submit" class="btn btn-primary" style="align-self: flex-start">Enviar propuesta →</button>
           <p id="contact-sent" hidden style="font-family: var(--font-mono); font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 60%, transparent); margin: 0">&gt; Se abrió tu cliente de correo con la propuesta. Si no ocurre, escribe directamente a {CONTACT_EMAIL}.</p>
         </form>
+      </div>
+      <div style="display: flex; justify-content: center; padding-top: 20px">
+        <LogoMark height={30} opacity={0.5} />
+      </div>
       </div>
      </div>
     </section>

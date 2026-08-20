@@ -1,6 +1,7 @@
 ---
 import { navLinks, WHATSAPP_URL } from '../data/nav';
 import WhatsAppIcon from './WhatsAppIcon.astro';
+import LogoMark from './LogoMark.astro';
 
 interface Props {
   currentPath: string;
@@ -12,8 +13,8 @@ const primaryLinks = navLinks.filter((link) => link.href !== '/contacto');
   class="nav"
   style="position: sticky; top: 0; z-index: 50; backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); background: color-mix(in srgb, var(--color-bg) 72%, transparent); border-bottom: 1px solid var(--color-divider)"
 >
-  <a href="/" class="nav-brand" style="text-decoration: none; display: flex; align-items: baseline; gap: 6px">
-    <span style="font-family: var(--font-mono); color: var(--color-accent)">ZA</span>
+  <a href="/" class="nav-brand" style="text-decoration: none; display: flex; align-items: center; gap: 10px">
+    <LogoMark height={26} />
     <span>Desarrollo Software</span>
   </a>
   <nav class="desktop-nav" style="align-items: center; gap: 28px; margin-left: 40px">
@@ -55,7 +56,9 @@ const primaryLinks = navLinks.filter((link) => link.href !== '/contacto');
   style="position: fixed; inset: 0; z-index: 100; background: var(--color-bg); display: flex; flex-direction: column"
 >
   <div class="nav" style="border-bottom: 1px solid var(--color-divider)">
-    <span class="nav-brand" style="font-family: var(--font-mono); color: var(--color-accent)">ZA</span>
+    <span class="nav-brand" style="display: flex; align-items: center">
+      <LogoMark height={24} />
+    </span>
     <button id="menu-close" type="button" aria-label="Cerrar menú" class="btn btn-secondary btn-icon">×</button>
   </div>
   <nav style="display: flex; flex-direction: column; gap: 6px; padding: 32px clamp(20px,6vw,64px); flex: 1">

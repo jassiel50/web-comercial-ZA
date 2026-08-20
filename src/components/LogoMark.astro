@@ -1,0 +1,30 @@
+---
+interface Props {
+  color?: string;
+  height?: number;
+  opacity?: number;
+  variant?: 'icon' | 'wordmark';
+  style?: string;
+}
+const { color = 'var(--color-accent)', height = 26, opacity = 1, variant = 'icon', style = '' } = Astro.props;
+const asset = variant === 'wordmark' ? '/logo-wordmark.png' : '/logo-mark.png';
+const ratio = variant === 'wordmark' ? 1.622 : 1.538;
+const width = height * ratio;
+---
+<span
+  class="logo-mark"
+  style={`display: inline-block; flex: none; width: ${width}px; height: ${height}px; background-color: ${color}; opacity: ${opacity}; -webkit-mask-image: url('${asset}'); mask-image: url('${asset}'); ${style}`}
+  role="img"
+  aria-label="ZA"
+></span>
+
+<style>
+  .logo-mark {
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+</style>
