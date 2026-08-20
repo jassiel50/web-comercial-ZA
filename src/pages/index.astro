@@ -3,6 +3,29 @@ import Layout from '../layouts/Layout.astro';
 
 const stack = ['Blazor WebAssembly', 'C#', '.NET', 'SQL Server', 'Radzen'];
 
+const capabilities = [
+  {
+    label: 'ERP a tu medida',
+    icon: '<svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24C74.17,24,32,48.6,32,80v96c0,31.4,42.17,56,96,56s96-24.6,96-56V80C224,48.6,181.83,24,128,24Zm80,152c0,16.5-32.66,40-80,40s-80-23.5-80-40V152.9c17.9,15.1,46.2,23.1,80,23.1s62.1-8,80-23.1Z"/></svg>',
+  },
+  {
+    label: 'App móvil · iOS y Android',
+    icon: '<svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor"><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16Zm8,200a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h96a8,8,0,0,1,8,8Z"/></svg>',
+  },
+  {
+    label: 'Control total por roles',
+    icon: '<svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor"><path d="M208,80H72V56a56,56,0,0,1,112,0,8,8,0,0,0,16,0,72,72,0,0,0-144,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm0,128H48V96H208V208Z"/></svg>',
+  },
+  {
+    label: 'Reportes en tiempo real',
+    icon: '<svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor"><rect x="32" y="140" width="36" height="76" rx="4"/><rect x="110" y="96" width="36" height="120" rx="4"/><rect x="188" y="56" width="36" height="160" rx="4"/></svg>',
+  },
+  {
+    label: 'Automatización de procesos',
+    icon: '<svg width="15" height="15" viewBox="0 0 256 256" fill="currentColor"><path d="M235.5,113.6l-104-56a8,8,0,0,0-7.6,0l-104,56a8,8,0,0,0,0,14.1L44.6,138,20.4,151.6a8,8,0,0,0,0,14.1l104,56.1a8,8,0,0,0,7.6,0l104-56.1a8,8,0,0,0,0-14.1L211.4,138l24.1-10.6a8,8,0,0,0,0-13.8ZM128,73.7,211.9,120,128,166.3,44.1,120ZM128,204.3,37,153.8l18.9-10.4L124,177.9a8,8,0,0,0,7.6,0l68.1-34.5L218.6,153.8Z"/></svg>',
+  },
+];
+
 const heroStats = [
   { label: 'Disponibilidad', value: '99.99%', color: '#6ee7b7' },
   { label: 'Tiempo de respuesta', value: '< 50ms', color: '#6ee7b7' },
@@ -86,14 +109,24 @@ const projects = [
   <main>
 
     <section class="wrap" style="padding-block: 20px 28px">
-      <div class="hero-panel stack-mobile" style="display: grid; grid-template-columns: minmax(0,1.15fr) minmax(0,1fr); gap: 40px; align-items: center; background: var(--color-surface); border: 1px solid var(--color-divider); border-left: 3px solid var(--color-accent); border-radius: var(--radius-lg); padding: clamp(20px,3.2vw,36px); box-shadow: var(--shadow-md)">
+      <div class="hero-panel stack-mobile" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 40px; align-items: center; background: var(--color-surface); border: 1px solid var(--color-divider); border-left: 3px solid var(--color-accent); border-radius: var(--radius-lg); padding: clamp(20px,3.2vw,36px); box-shadow: var(--shadow-md)">
         <div>
           <span style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 75%, transparent); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); padding: 6px 12px; border-radius: 999px; margin-bottom: 14px">
             <span style="width: 6px; height: 6px; border-radius: 50%; background: #6ee7b7; flex: none; animation: waPulse 2s ease-in-out infinite"></span>
             Disponible para nuevos proyectos
           </span>
-          <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4vw,42px); line-height: 1.14; letter-spacing: -0.015em; margin: 0; max-width: 26ch">Digitaliza tu negocio y optimiza cada proceso, sin complicaciones.</h1>
-          <p style="font-size: 15.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 78%, transparent); max-width: 52ch; margin: 14px 0 0; border-left: 2px solid var(--color-accent); padding-left: 16px">Diseño y construyo sistemas a la medida que resuelven los problemas reales de tu negocio: inventario, clientes, accesos y reportes — centralizados y disponibles desde tu computadora o tu celular, sin depender de hojas de cálculo ni procesos manuales.</p>
+          <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px,4vw,42px); line-height: 1.14; letter-spacing: -0.015em; margin: 0; max-width: 28ch">El control total de tu negocio: ERP propio y app móvil, a tu medida.</h1>
+          <p style="font-size: 15.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 78%, transparent); max-width: 52ch; margin: 14px 0 0; border-left: 2px solid var(--color-accent); padding-left: 16px">Diseño y construyo tu propio ERP y su aplicación móvil para iOS y Android: inventario, clientes, accesos y reportes — centralizados y disponibles desde tu computadora o tu celular, sin depender de hojas de cálculo ni procesos manuales.</p>
+          <div class="marquee" style="margin-top: 18px">
+            <div class="marquee-track">
+              {[...capabilities, ...capabilities].map((c) => (
+                <span style="display: inline-flex; align-items: center; gap: 7px; flex: none; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.03em; color: color-mix(in srgb, var(--color-text) 82%, transparent); background: color-mix(in srgb, var(--color-bg) 55%, transparent); border: 1px solid var(--color-divider); padding: 7px 13px; border-radius: 999px">
+                  <span style="color: var(--color-accent); display: inline-flex" set:html={c.icon} />
+                  {c.label}
+                </span>
+              ))}
+            </div>
+          </div>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(120px,45%),1fr)); gap: 14px; margin-top: 16px">
             {heroStats.map((s) => (
               <div style="padding-left: 16px; border-left: 1px solid var(--color-divider)">
@@ -102,7 +135,7 @@ const projects = [
               </div>
             ))}
           </div>
-          <p style="font-size: 11px; font-family: var(--font-mono); color: color-mix(in srgb, var(--color-text) 40%, transparent); margin: 6px 0 0">Cifras objetivo de referencia para el tipo de sistemas que construyo, no mediciones de un cliente en particular.</p>
+          <p class="hero-disclaimer" style="font-size: 11px; font-family: var(--font-mono); color: color-mix(in srgb, var(--color-text) 40%, transparent); margin: 6px 0 0">Cifras objetivo de referencia para el tipo de sistemas que construyo, no mediciones de un cliente en particular.</p>
           <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px">
             <a href="https://wa.me/528117788448" target="_blank" rel="noopener" class="btn btn-solid-accent">Hablemos de tu proyecto</a>
             <a href="#arquitectura" class="btn btn-secondary">Ver cómo funciona</a>
@@ -113,13 +146,33 @@ const projects = [
             ))}
           </div>
         </div>
-        <div style="position: relative; width: 100%; aspect-ratio: 16/11; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg)">
-          <img src="/images/hero-main.jpg" alt="Data center con arquitectura de software — ZA Desarrollo Software" class="img-cover" />
-          <div style="position: absolute; bottom: 14px; right: 14px; margin-left: auto; width: min(250px, 68%); pointer-events: none; font-family: var(--font-mono); font-size: 10px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 88%, transparent); background: color-mix(in srgb, var(--color-bg) 68%, transparent); backdrop-filter: blur(10px); border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); border-radius: var(--radius-sm); padding: 9px 11px; overflow: hidden">
+        <div style="position: relative; width: 100%; aspect-ratio: 16/11; overflow: visible">
+          <div style="position: relative; width: 100%; height: 100%; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg)">
+            <img src="/images/hero-main.jpg" alt="Data center con arquitectura de software — ZA Desarrollo Software" class="img-cover" />
+          </div>
+          <div class="float-slow" style="position: absolute; top: -16px; right: 18px; display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em; color: color-mix(in srgb, var(--color-text) 85%, transparent); background: color-mix(in srgb, var(--color-bg) 82%, transparent); backdrop-filter: blur(10px); border: 1px solid color-mix(in srgb, var(--color-text) 14%, transparent); border-radius: 999px; padding: 7px 13px; box-shadow: var(--shadow-md)">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #6ee7b7; flex: none; animation: waPulse 2s ease-in-out infinite"></span>
+            ERP propio, en vivo
+          </div>
+          <div class="float-slow-delay" style="position: absolute; bottom: 14px; right: 14px; margin-left: auto; width: min(230px, 60%); pointer-events: none; font-family: var(--font-mono); font-size: 10px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 88%, transparent); background: color-mix(in srgb, var(--color-bg) 68%, transparent); backdrop-filter: blur(10px); border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); border-radius: var(--radius-sm); padding: 9px 11px; overflow: hidden; box-shadow: var(--shadow-md)">
             <p style="margin: 0; color: color-mix(in srgb, var(--color-text) 50%, transparent)">~ $ tail -f /var/log/sys.log</p>
             <p style="margin: 3px 0 0"><span style="color: #6ee7b7">[OK]</span> Core modules initialized.</p>
             <p style="margin: 3px 0 0"><span style="color: #6ee7b7">[OK]</span> Secure connection established.</p>
             <p style="margin: 3px 0 0"><span style="color: #6ee7b7">[OK]</span> Microservices scaling up...</p>
+          </div>
+          <div class="float-slow" style="position: absolute; bottom: -20px; left: 40px; width: min(140px, 34%); aspect-ratio: 9/18.5; background: color-mix(in srgb, var(--color-bg) 90%, transparent); backdrop-filter: blur(10px); border: 1px solid color-mix(in srgb, var(--color-text) 16%, transparent); border-radius: 20px; padding: 12px 9px; box-shadow: var(--shadow-lg); pointer-events: none">
+            <div style="width: 30%; height: 4px; border-radius: 999px; background: color-mix(in srgb, var(--color-text) 35%, transparent); margin: 0 auto 10px"></div>
+            <div style="display: flex; flex-direction: column; gap: 7px">
+              <div style="height: 18px; border-radius: 5px; background: color-mix(in srgb, #9184d9 32%, transparent)"></div>
+              <div style="display: flex; gap: 5px">
+                <div style="flex: 1; height: 28px; border-radius: 5px; background: color-mix(in srgb, #6ee7b7 20%, transparent)"></div>
+                <div style="flex: 1; height: 28px; border-radius: 5px; background: color-mix(in srgb, #9184d9 20%, transparent)"></div>
+              </div>
+              <div style="height: 7px; border-radius: 999px; background: color-mix(in srgb, var(--color-text) 18%, transparent)"></div>
+              <div style="height: 7px; width: 65%; border-radius: 999px; background: color-mix(in srgb, var(--color-text) 18%, transparent)"></div>
+              <div style="height: 7px; width: 80%; border-radius: 999px; background: color-mix(in srgb, var(--color-text) 18%, transparent)"></div>
+            </div>
+            <span style="display: block; text-align: center; margin-top: 10px; font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.05em; color: color-mix(in srgb, var(--color-text) 55%, transparent)">APP MÓVIL</span>
           </div>
         </div>
       </div>
@@ -189,7 +242,7 @@ const projects = [
         <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(24px,3vw,32px); margin: 0 0 36px; max-width: 30ch">Soluciones que resuelven problemas reales de negocio.</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px,100%),1fr)); gap: 20px">
           {projects.map((p) => (
-            <a href={p.href} class="card elev-sm project-card" style="text-decoration: none; color: inherit; transition: transform .25s ease, box-shadow .25s ease; background: var(--color-surface)">
+            <a href={p.href} class="card elev-sm hover-lift" style="text-decoration: none; color: inherit; background: var(--color-surface)">
               <div style="position: relative; width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-sm); overflow: hidden">
                 <img src={p.imgSrc} alt={p.title} class="img-cover" />
                 <span style="position: absolute; top: 10px; left: 10px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--color-accent); background: color-mix(in srgb, var(--color-bg) 65%, transparent); backdrop-filter: blur(10px); padding: 4px 9px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">{p.code}</span>
@@ -267,10 +320,6 @@ const projects = [
 </Layout>
 
 <style>
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-  }
   /* The panel card shares its row with two 1-column cards on wide layouts;
      spanning 2 grid tracks would force a second 300px track even when the
      viewport can't fit it, so the span only applies once two tracks exist. */
@@ -297,5 +346,13 @@ const projects = [
   .btn-solid-accent:active {
     background: var(--color-accent-600);
     border-color: var(--color-accent-600);
+  }
+  /* Keeps the fine-print disclaimer clear of the fixed WhatsApp button's
+     footprint (bottom-right, ~78px) on short mobile viewports, where the
+     hero's last lines can land underneath it before the user scrolls. */
+  @media (max-width: 480px) {
+    .hero-disclaimer {
+      padding-right: 84px;
+    }
   }
 </style>

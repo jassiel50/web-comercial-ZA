@@ -64,13 +64,16 @@ const {
 
       <div style="position: relative; width: 100%; aspect-ratio: 16/8; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px">
         <img src={heroSrc} alt={heroAlt} class="img-cover" />
-        <span style="position: absolute; top: 16px; left: 16px; pointer-events: none; font-family: var(--font-mono); font-size: 11px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">{heroBadge}</span>
+        <span class="float-slow" style="position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 7px; pointer-events: none; font-family: var(--font-mono); font-size: 11px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 7px 13px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #6ee7b7; flex: none; animation: waPulse 2s ease-in-out infinite"></span>
+          {heroBadge}
+        </span>
       </div>
      </div>
     </section>
 
     <section style="background: var(--color-surface)">
-     <div class="stack-mobile wrap" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(min(240px,100%),300px); gap: 56px; padding-block: 56px">
+     <div data-reveal="1" class="stack-mobile wrap" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(min(240px,100%),300px); gap: 56px; padding-block: 56px">
       <div style="display: flex; flex-direction: column; gap: 48px">
         <div>
           <span style="display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 14px">01 · El problema</span>
@@ -83,7 +86,7 @@ const {
             {shots.map((shot) => (
               <figure style="margin: 0">
                 {shot.imgSrc ? (
-                  <div style={`position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; border: 1px solid var(--color-divider); background: ${shot.bg ?? 'var(--color-bg)'}`}>
+                  <div class="hover-lift" style={`position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; border: 1px solid var(--color-divider); background: ${shot.bg ?? 'var(--color-bg)'}`}>
                     <img
                       src={shot.imgSrc}
                       alt={shot.caption}

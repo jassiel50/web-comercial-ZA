@@ -284,3 +284,40 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* — dynamic motifs: gentle float for overlay badges/mockups, marquee
+   for scrolling capability strips, and a shared hover-lift for cards — */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float-slow { animation: floatY 5s ease-in-out infinite; }
+.float-slow-delay { animation: floatY 5.6s ease-in-out infinite; animation-delay: 0.9s; }
+.float-slow-delay-2 { animation: floatY 5.3s ease-in-out infinite; animation-delay: 0.45s; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+  mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+.hover-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+
+@media (prefers-reduced-motion: reduce) {
+  .float-slow, .float-slow-delay, .float-slow-delay-2, .marquee-track {
+    animation: none;
+  }
+  .hover-lift:hover { transform: none; }
+}

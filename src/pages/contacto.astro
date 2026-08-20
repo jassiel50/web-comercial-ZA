@@ -35,7 +35,7 @@ const faqs = [
             <h2 class="card-kicker" style="margin-bottom: 4px">WhatsApp directo</h2>
             <p style="font-size: 15.5px; font-weight: 500; margin: 0">{WHATSAPP_DISPLAY}</p>
           </div>
-          <span style="color: var(--color-accent)">→</span>
+          <span class="contact-arrow" style="color: var(--color-accent); transition: transform 0.2s ease">→</span>
         </a>
         <a href={`mailto:${CONTACT_EMAIL}`} class="card contact-card" style="flex-direction: row; align-items: center; gap: 16px; text-decoration: none; color: inherit; transition: box-shadow .25s ease; background: var(--color-bg)">
           <div style="width: 44px; height: 44px; flex: none; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--color-accent) 14%, transparent); display: flex; align-items: center; justify-content: center; color: var(--color-accent)">
@@ -45,12 +45,15 @@ const faqs = [
             <h2 class="card-kicker" style="margin-bottom: 4px">Correo</h2>
             <p style="font-size: 15.5px; font-weight: 500; margin: 0; overflow-wrap: anywhere">{CONTACT_EMAIL}</p>
           </div>
-          <span style="color: var(--color-accent)">→</span>
+          <span class="contact-arrow" style="color: var(--color-accent); transition: transform 0.2s ease">→</span>
         </a>
         <p style="font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 50%, transparent); margin: 4px 4px 0; font-family: var(--font-mono)">Ing. Jassiel Zamarrón</p>
         <div style="position: relative; width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-lg); overflow: hidden; margin-top: 8px">
           <img src="/images/desk-setup.jpg" alt="Espacio de trabajo de Ing. Jassiel Zamarrón" class="img-cover" />
-          <span style="position: absolute; top: 14px; left: 14px; pointer-events: none; font-family: var(--font-mono); font-size: 10.5px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 5px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">Donde construyo tu sistema</span>
+          <span class="float-slow" style="position: absolute; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 7px; pointer-events: none; font-family: var(--font-mono); font-size: 10.5px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #6ee7b7; flex: none; animation: waPulse 2s ease-in-out infinite"></span>
+            Donde construyo tu sistema
+          </span>
         </div>
       </div>
 
@@ -104,6 +107,9 @@ const faqs = [
 <style>
   .contact-card:hover {
     box-shadow: 0 0 0 1px var(--color-accent);
+  }
+  .contact-card:hover .contact-arrow {
+    transform: translateX(4px);
   }
 </style>
 
