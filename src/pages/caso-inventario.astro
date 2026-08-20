@@ -8,11 +8,12 @@ import CaseStudyLayout from '../components/CaseStudyLayout.astro';
   headerTags={['Blazor WebAssembly', 'SQL Server', 'Radzen']}
   heroSrc="/images/erp-dashboard.jpg"
   heroAlt="Captura general del sistema de inventario"
+  heroBadge="Sistema de control de inventario"
   problem="El control de inventario se llevaba en hojas de cálculo compartidas por correo. Cada actualización llegaba tarde, los conteos no coincidían entre bodega y administración, y no había forma de saber quién había movido el stock ni cuándo."
   solution="Se construyó un sistema web con Blazor WebAssembly y componentes Radzen para el panel de control, con SQL Server como base de datos transaccional. Cada movimiento de stock — ingreso, salida o ajuste — queda registrado con usuario y fecha, y los reportes de inventario se generan al instante en lugar de armarse a mano al final del mes."
   shots={[
-    { caption: 'Panel de control de stock' },
-    { caption: 'Historial de movimientos auditado' },
+    { caption: 'Panel de control de stock', imgSrc: '/images/inventario-panel.png', fit: 'contain', bg: '#ffffff' },
+    { caption: 'Historial de movimientos auditado', imgSrc: '/images/inventario-trazabilidad.png', fit: 'contain', bg: '#ffffff' },
   ]}
   results={[
     { title: 'Tiempo real', body: 'Bodega y administración comparten el mismo dato de stock, sin retrasos.' },

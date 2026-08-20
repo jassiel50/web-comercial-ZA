@@ -20,6 +20,7 @@ interface Props {
   headerTags: string[];
   heroSrc: string;
   heroAlt: string;
+  heroBadge: string;
   problem: string;
   solution: string;
   shots: Shot[];
@@ -35,6 +36,7 @@ const {
   headerTags,
   heroSrc,
   heroAlt,
+  heroBadge,
   problem,
   solution,
   shots,
@@ -62,7 +64,7 @@ const {
 
       <div style="position: relative; width: 100%; aspect-ratio: 16/8; border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 40px">
         <img src={heroSrc} alt={heroAlt} class="img-cover" />
-        <span style="position: absolute; top: 16px; left: 16px; pointer-events: none; font-family: var(--font-mono); font-size: 11px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">Vista previa — sin datos reales</span>
+        <span style="position: absolute; top: 16px; left: 16px; pointer-events: none; font-family: var(--font-mono); font-size: 11px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">{heroBadge}</span>
       </div>
      </div>
     </section>
@@ -81,19 +83,20 @@ const {
             {shots.map((shot) => (
               <figure style="margin: 0">
                 {shot.imgSrc ? (
-                  <div style={`width: 100%; aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; border: 1px solid var(--color-divider); background: ${shot.bg ?? 'var(--color-bg)'}`}>
+                  <div style={`position: relative; width: 100%; aspect-ratio: 4/3; border-radius: 10px; overflow: hidden; border: 1px solid var(--color-divider); background: ${shot.bg ?? 'var(--color-bg)'}`}>
                     <img
                       src={shot.imgSrc}
                       alt={shot.caption}
                       style={`width: 100%; height: 100%; display: block; object-fit: ${shot.fit ?? 'cover'}; object-position: ${shot.position ?? 'center'}`}
                     />
+                    <span style="position: absolute; bottom: 12px; left: 12px; pointer-events: none; font-family: var(--font-mono); font-size: 11px; color: var(--color-text); background: color-mix(in srgb, var(--color-bg) 55%, transparent); backdrop-filter: blur(10px); padding: 6px 12px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent)">{shot.caption}</span>
                   </div>
                 ) : (
                   <div style="width: 100%; aspect-ratio: 4/3; border-radius: 10px; background: var(--color-bg); border: 1px dashed var(--color-divider); display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px">
                     <span style="font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 45%, transparent)">{shot.caption}</span>
                   </div>
                 )}
-                <figcaption>{shot.caption}{!shot.imgSrc && ' (placeholder)'}</figcaption>
+                {!shot.imgSrc && <figcaption>{shot.caption} (placeholder)</figcaption>}
               </figure>
             ))}
           </div>
