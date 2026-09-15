@@ -7,6 +7,7 @@ export const navLinks = [
   { href: '/', label: 'Inicio' },
   { href: '/demo-erp', label: 'Demo ERP' },
   { href: '/proyectos', label: 'Proyectos' },
+  { href: '/blog', label: 'Blog' },
   { href: '/sobre-mi', label: 'Sobre mí' },
   { href: '/servicios', label: 'Servicios' },
   { href: '/contacto', label: 'Contacto' },
