@@ -187,6 +187,16 @@ const projects = [
      </div>
     </section>
 
+    <section style="border-top: 1px solid var(--color-divider); border-bottom: 1px solid var(--color-divider)">
+      <div data-reveal="1" class="wrap demo-hook" style="padding-block: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+        <div style="display: flex; align-items: center; gap: 14px">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #6ee7b7; flex: none; animation: waPulse 2s ease-in-out infinite"></span>
+          <p style="margin: 0; font-size: 16px; color: color-mix(in srgb, var(--color-text) 88%, transparent)">¿Y si pudieras ver el resultado antes de pedirlo? Entra a un ERP real, en vivo.</p>
+        </div>
+        <a href="/demo-erp" class="btn btn-secondary" style="white-space: nowrap; flex: none">Probar la demo →</a>
+      </div>
+    </section>
+
     <section id="arquitectura" style="background: var(--color-surface); scroll-margin-top: 96px">
       <div data-reveal="1" class="wrap" style="padding-block: 64px">
         <span style="display: block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent); margin-bottom: 14px">Así se ve por dentro</span>
@@ -365,6 +375,17 @@ const projects = [
   @media (max-width: 480px) {
     .hero-disclaimer {
       padding-right: 84px;
+    }
+  }
+  @media (max-width: 640px) {
+    .demo-hook {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 16px;
+    }
+    .demo-hook > a {
+      align-self: stretch;
+      text-align: center;
     }
   }
 </style>
