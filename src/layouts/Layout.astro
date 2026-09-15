@@ -11,10 +11,35 @@ interface Props {
 }
 const {
   title,
-  description = 'Sistemas administrativos, portales y automatizaciones a la medida. Blazor WebAssembly, C#, SQL Server y Radzen.',
+  description = 'Desarrollo de software a la medida en Monterrey: sistemas administrativos, ERPs propios, apps móviles y portales de gestión. Sin plantillas genéricas.',
   footerVariant = 'simple',
 } = Astro.props;
 const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+const canonicalURL = new URL(currentPath, Astro.site);
+const ogImageURL = new URL('/images/og-image.jpg', Astro.site);
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'ZA Desarrollo Software',
+  image: ogImageURL.toString(),
+  url: Astro.site?.toString(),
+  telephone: '+528117788448',
+  email: 'albertojassiel@gmail.com',
+  description: 'Desarrollo de software a la medida: sistemas administrativos, ERPs propios, apps móviles y portales de gestión.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Monterrey',
+    addressRegion: 'Nuevo León',
+    addressCountry: 'MX',
+  },
+  areaServed: 'MX',
+  founder: {
+    '@type': 'Person',
+    name: 'Ing. Jassiel Zamarrón',
+  },
+  sameAs: ['https://www.instagram.com/za.software'],
+};
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -22,8 +47,24 @@ const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replac
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ZA Desarrollo Software" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:image" content={ogImageURL} />
+  <meta property="og:locale" content="es_MX" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageURL} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
 </head>
 <body>
   <Header currentPath={currentPath} />
